@@ -208,7 +208,7 @@ route add -net 172.16.0.0 netmask 255.255.255.0 gw 192.168.124.254  eno1.342
 | *.app.\<cluster_name\>.\<base_domain\>.   | *.ocp47.example.localdomain.       | Routes |
 
 この手順書では、
-- \<cluster_name\> = `ocp4`
+- \<cluster_name\> = `ocp47`
 - \<base_domain\> = `example.localdomain` 
 
 としました。これらの値は、後で`DNS`に登録していきます。
