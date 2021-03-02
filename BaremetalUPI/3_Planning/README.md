@@ -115,12 +115,12 @@ Master Nodeはスケールアウトしたり、後からCPUやRAMのサイズを
 |:---------------|:--------------|:------------|:--------|:---------|:---------------------------|:------|:------|
 |踏み台(bastion)  | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |bastion.example.localdomain|172.16.0.101|       |
 |DNS / DHCP      | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |ns1.example.localdomain     |172.16.0.102|        |
-|                | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |ns2.example.localdomain     |172.16.0.103| 冗長用 |
+|                | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |ns2.example.localdomain     |172.16.0.103| 冗長用(※1) |
 |LoadBalancer    | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |lb1.example.localdomain     |172.16.0.110/111|       |
-|                | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |lb2.example.localdomain     |172.16.0.120/121|  冗長用 |
+|                | 2vCPU         | 4GByte      | 60G    | RHEL 8.2 |lb2.example.localdomain     |172.16.0.120/121|  冗長用 (※1)|
 
-
-`Kubernetes` には含まれていませんが、`Kubernetes`を動かすために必要なサーバー群です。
+これらのサーバーは `Kubernetes / OpenShift ` には含まれていませんが、`Kubernetes / OpenShift `を動かすために必要なサーバー群です。
+※1) この手順ではリストのみで構成しませんが、本番環境では冗長化を考慮した方が良いコンポーネントです。
 
 #### 踏み台(bastion)
 `OpenShift`インストール時に作業の起点となるサーバーです。`kubectl`、`oc`コマンドなどの実行場所です。
