@@ -20,4 +20,4 @@ networking:
 platform:
   none: {}
 pullSecret: '[ここにpull secretを貼り付ける]'
-sshKey: [ssh-rsa からはじまる SSH Key の公開鍵の方をここに貼り付けます。Nodeの管理用のログイン用として登録されます。]
+sshKey: '[ssh-rsa からはじまる SSH Key の公開鍵の方をここに貼り付けます。Nodeの管理用のログイン用として登録されます。]'
