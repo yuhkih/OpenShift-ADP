@@ -1,0 +1,23 @@
+apiVersion: v1
+baseDomain: example.localdomain
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 0
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: ocp47
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+pullSecret: '[ここにpull secretを貼り付ける]'
+sshKey: [ssh-rsa からはじまる SSH Key の公開鍵の方をここに貼り付けます。Nodeの管理用のログイン用として登録されます。]
