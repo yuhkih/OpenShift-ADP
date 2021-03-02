@@ -39,14 +39,14 @@
 
 物理環境では厳密な意味での完全な`IPI`インストールというのはあり得ません。例えば物理環境では、少なくてもルーターやサーバーを設置してケーブルを配線するという環境準備が必要です。
 
-しかし、`OpenShift 4.6`では、ネットワークの環境が整っていれば、`OpenStack`の`Ironic`等で利用されている`Bare Metal Provisioning`の技術を利用する事でインストーラーから`ノード`の`OS`のデプロイを実行できるようになりました。これも`Bare Metal IPI`と呼ぶようになりました。ただこの場合も、DNSやルーティングなどは、事前に手動でセットアップする必要があるので、`Public Cloud Provider`上の`IPI`とはできる範囲が違います。
+しかし、`OpenShift 4.6`からは、ネットワークの環境が整っていれば、`OpenStack`の`Ironic`等で利用されている`Bare Metal Provisioning`の技術を利用する事でインストーラーから`ノード`の`OS`のデプロイを実行できるようになりました。これも`Bare Metal IPI`と呼ぶようになりました。ただこの場合も、DNSやルーティングなどは、事前に手動でセットアップする必要があるので、`Public Cloud Provider`上の`IPI`とはできる範囲が違います。
 
 参考：<a href="https://openshift-kni.github.io/baremetal-deploy/4.6/Deployment.html">Deploying Installer Provisioned Infrastructure (IPI) of OpenShift on Bare Metal - 4.6</a>
 
 
 ## 1-3. この文書で実行する内容
 
-この文書では、物理環境であればどこにでも適用できるインストール方法である`Baremetal`環境への `UPI(User Provisioned Infrastructure)`インストールを`OpenShift 4.6`を使用して実行してみます。
+この文書では、物理環境であればどこにでも適用できるインストール方法である`Baremetal`環境への `UPI(User Provisioned Infrastructure)`インストールを`OpenShift 4.7`を使用して実行してみます。
 
 `UPI(User Provisioned Infrastructure)`ですので、自分で、`OpenShiftt`を稼働させるための`DNS`サーバー、`Load Balancer`、`Kubernetes`の`Masterノード`、`Workerノード`等のインストールなどの周辺環境を`Provision`してあげる必要があります。
 
