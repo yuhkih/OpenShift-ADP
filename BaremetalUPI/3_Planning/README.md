@@ -48,19 +48,19 @@ OpenShiftクラスターは様々な要素によって構成されています�
 
 | サーバー        | vCPU(HT-on) | Memory      |  Disk   |    OS   |         ホスト名            | IP Address  |  note   | 
 |:---------------|:--------------|:------------|:--------|:--------|:---------------------------|:------------|:------|
-|BootStrapノード  | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |bs.ocp46.example.localdomain|172.16.0.11 |一時的|
-|Masterノード     | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m1.ocp46.example.localdomain| 172.16.0.21 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m2.ocp46.example.localdomain| 172.16.0.22 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m3.ocp46.example.localdomain| 172.16.0.23 |     | 
-|Workerノード     | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w1.ocp46.example.localdomain |172.16.0.31 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w2.ocp46.example.localdomain| 172.16.0.32 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w3.ocp46.example.localdomain| 172.16.0.33 |     | 
-|Infraノード      | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i1.ocp46.example.localdomain|172.16.0.41 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i2.ocp46.example.localdomain|172.16.0.42 |     | 
-|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i3.ocp46.example.localdomain|172.16.0.43 |     | 
-|OCSノード        | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s1.ocp46.example.localdomain |172.16.0.51 | 1 TiB SSD x3 別途搭載 | 
-|                | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s2.ocp46.example.localdomain| 172.16.0.52 | 1 TiB SSD x3 別途搭載 | 
-|                | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s3.ocp46.example.localdomain| 172.16.0.53 | 1 TiB SSD x3 別途搭載 | 
+|BootStrapノード  | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |bs.ocp47.example.localdomain|172.16.0.11 |一時的|
+|Masterノード     | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m1.ocp47.example.localdomain| 172.16.0.21 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m2.ocp47.example.localdomain| 172.16.0.22 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |m3.ocp47.example.localdomain| 172.16.0.23 |     | 
+|Workerノード     | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w1.ocp47.example.localdomain |172.16.0.31 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w2.ocp47.example.localdomain| 172.16.0.32 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |w3.ocp47.example.localdomain| 172.16.0.33 |     | 
+|Infraノード      | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i1.ocp47.example.localdomain|172.16.0.41 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i2.ocp47.example.localdomain|172.16.0.42 |     | 
+|                | 4vCPU         | 16GByte     | 120G    |  RHEL CoreOS |i3.ocp47.example.localdomain|172.16.0.43 |     | 
+|OCSノード        | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s1.ocp47.example.localdomain |172.16.0.51 | 1 TiB SSD x3 別途搭載 | 
+|                | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s2.ocp47.example.localdomain| 172.16.0.52 | 1 TiB SSD x3 別途搭載 | 
+|                | 16vCPU        | 32GByte     | 120G    |  RHEL CoreOS |s3.ocp47.example.localdomain| 172.16.0.53 | 1 TiB SSD x3 別途搭載 | 
 
 
 ※各`ノード`のスペックは、OpenShift 4.6 のマニュアルを基準にしています。<a href="https://docs.openshift.com/container-platform/4.6/installing/installing_bare_metal/installing-restricted-networks-bare-metal.html#minimum-resource-requirements_installing-restricted-networks-bare-metal">Minimum resource requirements</a>
@@ -203,12 +203,12 @@ route add -net 172.16.0.0 netmask 255.255.255.0 gw 192.168.124.254  eno1.342
 
 | ドメイン名                               | この手順の名前                       |   用途         |   
 |:----------------------------------------|:------------------------------------|:--------------|
-| api.\<cluster_name\>.\<base_domain\>.        | api.ocp46.example.localdomain.     |  Kubernetes API |
-| api-int.\<cluster_name\>.\<base_domain\>.    | api-int.ocp46.example.localdomain. |Kubernetes API |
-| *.app.\<cluster_name\>.\<base_domain\>.   | *.ocp46.example.localdomain.       | Routes |
+| api.\<cluster_name\>.\<base_domain\>.        | api.ocp47.example.localdomain.     |  Kubernetes API |
+| api-int.\<cluster_name\>.\<base_domain\>.    | api-int.ocp47.example.localdomain. |Kubernetes API |
+| *.app.\<cluster_name\>.\<base_domain\>.   | *.ocp47.example.localdomain.       | Routes |
 
 この手順書では、
-- \<cluster_name\> = `ocp46`
+- \<cluster_name\> = `ocp4`
 - \<base_domain\> = `example.localdomain` 
 
 としました。これらの値は、後で`DNS`に登録していきます。
